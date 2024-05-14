@@ -1,0 +1,53 @@
+.play-friend__board {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	width: 500px;
+	height: 500px;
+	background-color: $orangeCell;
+	border: 1px solid $orangeButtons;
+	box-sizing: border-box;
+	cursor: pointer;
+
+	.winning-cell {
+		background-color: #55dc646b;;
+	}
+
+	.cell {
+		border: 1px solid $orangeButtons;
+		position: relative;
+	}
+	.cell-o::after {
+		content: '';
+		position: absolute;
+		width: 60%;
+		height: 60%;
+		background-color: transparent;
+		border: 15px solid #53b6d4;
+		border-radius: 50%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.cell-x::before,
+	.cell-x::after {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 120px;
+		border-radius: 8px;
+		background-color: #de0000;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.cell-x::before {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	.cell-x::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+}

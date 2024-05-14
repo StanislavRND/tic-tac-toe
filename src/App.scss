@@ -1,0 +1,125 @@
+@import './scss/libs/normalize';
+@import './scss/variables';
+@import './scss/components/board.scss';
+@import './scss/components/modal.scss';
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* HOME */
+.home {
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180px;
+
+  &__title {
+    font-size: 60px;
+    color: $orange;
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 75%;
+
+    .button {
+      background-color: $orangeButtons;
+      height: 80px;
+      border-radius: 7px;
+      width: 100%;
+      color: white;
+      font-size: 28px;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: $orangeButtonsHover;
+        transition: 0.3s ease;
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// PLAY-FRIEND
+.back__home {
+  font-size: 22px;
+  background-color: $orangeButtons;
+  color: white;
+  width: 120px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  transition: 0.2s ease-in;
+  position: absolute;
+  top: 40px;
+  left: 120px;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: 0.2s ease-in;
+    background-color: $orangeButtonsHover;
+  }
+}
+.play-friend {
+  margin: 0 auto;
+
+  &__move {
+    font-size: 36px;
+    color: #808080;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 400;
+    font-style: italic;
+		position: relative;
+  }
+}
+.o {
+  width: 46px;
+  height: 46px;
+  background-color: transparent;
+  border: 7px solid #53b6d4;
+  border-radius: 50%;
+}
+
+.x {
+ position: relative;
+ width: 52px;
+ height: 52px;
+}
+.x::before,
+.x::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  background-color: #de0000;
+	border-radius: 4px;
+}
+
+.x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
