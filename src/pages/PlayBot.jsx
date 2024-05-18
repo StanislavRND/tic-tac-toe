@@ -1,8 +1,7 @@
-import React from 'react';
 import Board from '../components/Board';
 
-const PlayEasyBot = () => {
+const PlayBot = () => {
   return <Board isPlayingWithBot={true} />;
 };
 
-export default PlayEasyBot;
+export default PlayBot;

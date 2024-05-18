@@ -15,9 +15,10 @@ const Board = ({ isPlayingWithBot }) => {
       const newValues = values.slice();
       newValues[i] = isNextX ? 'x' : 'o';
       setValues(newValues);
-			setIsNextX(!isNextX);
-    } 	
+      setIsNextX(!isNextX);
+    }
   };
+	
   const makeBotMove = () => {
     if (!isNextX && isPlayingWithBot && !isWinner) {
       const availableMoves = values.reduce((acc, value, index) => {
@@ -31,7 +32,7 @@ const Board = ({ isPlayingWithBot }) => {
     }
     return null;
   };
-	
+
   useEffect(() => {
     const winner = checkWinners(values, setIsWinner, setWinningCells);
     const draw = checkDraw(values);
@@ -59,8 +60,8 @@ const Board = ({ isPlayingWithBot }) => {
     }
   }, [values, isNextX]);
 
-	let playerMove = isNextX ? <div className="x"></div> : <div className="o"></div>;
-	let infoWinner = winner === 'x' ? <div className="x"></div> : <div className="o"></div>;
+  let playerMove = isNextX ? <div className="x"></div> : <div className="o"></div>;
+  let infoWinner = winner === 'x' ? <div className="x"></div> : <div className="o"></div>;
 
   return (
     <>
