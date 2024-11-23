@@ -50,12 +50,29 @@
 	.cell-x::after {
 		transform: translate(-50%, -50%) rotate(-45deg);
 	}
+
+	@media (max-width: 580px) {
+		.cell-x::before,
+		.cell-x::after {
+			width: 10px;
+			height: 80px;
+		}
+
+		.cell-o::after {
+			border: 10px solid #53b6d4;
+		}
+	}
 }
 
 @media (max-width: 580px) {
 	.play-friend__board  {
 		width: 380px;
 		height: 380px;
+	}
+	.cell-x::before,
+	.cell-x::after {
+		width: 10px;
+		height: 80px;
 	}
 }
 
