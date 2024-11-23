@@ -6,5 +6,6 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf  
+      - ./app/dist:/usr/share/nginx/html 
     container_name: react-container
