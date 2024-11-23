@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { checkDraw, checkWinners, resetGame } from './../logicGame';
@@ -18,7 +19,7 @@ const Board = ({ isPlayingWithBot }) => {
       setIsNextX(!isNextX);
     }
   };
-	
+
   const makeBotMove = () => {
     if (!isNextX && isPlayingWithBot && !isWinner) {
       const availableMoves = values.reduce((acc, value, index) => {
@@ -65,9 +66,12 @@ const Board = ({ isPlayingWithBot }) => {
 
   return (
     <>
-      <Link to={'/home'}>
-        <div className="back__home">Главная</div>
-      </Link>
+      <div className="block__home">
+        <Link to={'/home'}>
+          <button className="back__home">Главная</button>
+        </Link>
+      </div>
+
       <div className="play-friend">
         <div className="play-friend__move">
           {isDraw ? 'Ничья' : !isWinner ? 'Ваш ход' : 'Выиграл'}
@@ -86,6 +90,10 @@ const Board = ({ isPlayingWithBot }) => {
       </div>
     </>
   );
+};
+
+Board.propTypes = {
+  isPlayingWithBot: PropTypes.bool.isRequired,
 };
 
 export default Board;
