@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./app/dist:/var/www/dist  
-      - ./app/.nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./tic-tac-toe/dist:/usr/share/nginx/html 
+      - ./tic-tac-toe/.nginx/nginx.conf:/etc/nginx/nginx.conf:ro 
     container_name: react-container
     restart: always
