@@ -8,3 +8,7 @@ services:
       - "80:80"
     networks:
       - your-network
+
+networks:
+  your-network:
+    driver: bridge
