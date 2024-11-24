@@ -3,7 +3,7 @@ services:
     container_name: react-container
     image: nginx:latest
     volumes:
-      - /root/tic-tac-toe/nginx/nginx.conf:/etc/nginx/nginx.conf:ro  
+      - /root/tic-tac-toe/nginx/nginx.conf:/etc/nginx/sites-enabled/default:ro 
     ports:
       - "80:80"
     networks:
